@@ -6,5 +6,5 @@ import 'package:dartz/dartz.dart';
 abstract class LayoutRepository {
   Future<Either<DioFailure, QrCodeResponseEntity>> sendQR(String studentId,
       String sessionId, String attendanceStatus);
-  Future<Either<DioFailure,ReportAttendanceReportEntity>> getAttendance(String studentId);
+  Future<Either<DioFailure,ReportAttendanceReportEntity>> getAttendance(String courseId);
 }

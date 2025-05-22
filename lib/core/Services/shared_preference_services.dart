@@ -5,7 +5,7 @@ static late SharedPreferences sharedPreferences;
 static Future<void> init()async{
   sharedPreferences = await SharedPreferences.getInstance();
 }
-static Future<bool> saveToken(String key ,dynamic value){
+static Future<bool> saveData(String key ,dynamic value){
   if(value is int){
     return sharedPreferences.setInt(key, value);
   }
@@ -19,10 +19,10 @@ static Future<bool> saveToken(String key ,dynamic value){
     return sharedPreferences.setBool(key, value);
   }
 }
-static Object? getToken(String key){
+static Object? getData(String key){
   return sharedPreferences.get(key);
 }
-static Future<bool> deleteToken(String key)async{
+static Future<bool> deleteData(String key)async{
   return await sharedPreferences.remove(key);
 }
 }

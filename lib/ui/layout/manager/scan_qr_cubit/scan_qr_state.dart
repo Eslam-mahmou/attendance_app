@@ -4,19 +4,19 @@ class AttendanceInitial extends AttendanceState {}
 
 class ScanningState extends AttendanceState {}
 
-class QRDetectState extends AttendanceState {
+class QRDetectedState extends AttendanceState {
   final String qrData;
-  QRDetectState(this.qrData);
+  QRDetectedState(this.qrData);
 }
 
 class SendingAttendanceState extends AttendanceState {}
 
-class AttendanceSuccess extends AttendanceState {
+class AttendanceSuccessState extends AttendanceState {
   final String message;
-  AttendanceSuccess(this.message);
+  AttendanceSuccessState(this.message);
 }
 
-class AttendanceError extends AttendanceState {
+class AttendanceErrorState extends AttendanceState {
   final String errorMessage;
-  AttendanceError(this.errorMessage);
+  AttendanceErrorState(this.errorMessage);
 }

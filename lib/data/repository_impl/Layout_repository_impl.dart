@@ -22,8 +22,8 @@ class LayoutRepositoryImpl implements LayoutRepository {
       (String studentId, String sessionId, String attendanceStatus) async {
     var response = await _layoutRemoteDataSource.sendQR(
         studentId, sessionId, attendanceStatus);
-    log(SharedPreferenceServices.getToken(AppConstants.token.toString()).toString());
-  log("Bearer ${SharedPreferenceServices.getToken(AppConstants.token).toString()}");
+    log(SharedPreferenceServices.getData(AppConstants.token.toString()).toString());
+  log("Bearer ${SharedPreferenceServices.getData(AppConstants.token).toString()}");
   log(response.toString());
     try {
       if (response.statusCode == 200) {
@@ -49,8 +49,8 @@ class LayoutRepositoryImpl implements LayoutRepository {
   }
 
   @override
-  Future<Either<DioFailure, ReportAttendanceReportEntity>> getAttendance(String studentId) async{
-    var response=await _layoutRemoteDataSource.getAttendance(studentId);
+  Future<Either<DioFailure, ReportAttendanceReportEntity>> getAttendance(String courseId) async{
+    var response=await _layoutRemoteDataSource.getAttendance(courseId);
     log(response.toString());
     try {
       if (response.statusCode==200){

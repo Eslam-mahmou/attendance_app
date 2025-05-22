@@ -14,3 +14,10 @@ class ErrorAttendanceState extends AttendanceState {
   String errMessage;
   ErrorAttendanceState(this.errMessage);
 }
+class UpdateAttendanceIndexState extends AttendanceState{
+  ReportAttendanceReportEntity report;
+  UpdateAttendanceIndexState(this.report);
+}
+class UpdateLoadingState extends AttendanceState{
+
+}

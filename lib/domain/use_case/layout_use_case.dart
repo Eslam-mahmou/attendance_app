@@ -19,7 +19,7 @@ class LayoutUseCase {
   }
 
   Future<Either<DioFailure, ReportAttendanceReportEntity>> call(
-      String studentId) async {
-    return await _layoutRepository.getAttendance(studentId);
+      String courseId) async {
+    return await _layoutRepository.getAttendance(courseId);
   }
 }

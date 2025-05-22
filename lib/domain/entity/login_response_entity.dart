@@ -70,11 +70,4 @@ class Courses {
   String? id;
   String? courseName;
 
-  Map<String, dynamic> toJson() {
-    final map = <String, dynamic>{};
-    map['_id'] = id;
-    map['courseName'] = courseName;
-    return map;
-  }
-
 }

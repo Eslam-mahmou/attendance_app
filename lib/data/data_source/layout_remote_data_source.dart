@@ -1,4 +1,3 @@
-import 'dart:developer';
 
 import 'package:attend_app/core/Services/api_manager.dart';
 import 'package:attend_app/core/Services/shared_preference_services.dart';
@@ -27,16 +26,16 @@ class LayoutRemoteDataSourceImpl implements LayoutRemoteDataSource {
       "sessionID": sessionId,
       "attendanceStatus": attendanceStatus
     }, headers: {
-      'Authorization': "Bearer ${SharedPreferenceServices.getToken(AppConstants.token).toString()}",
+      'Authorization': "Bearer ${SharedPreferenceServices.getData(AppConstants.token).toString()}",
       'Content-Type': 'application/json',
     });
   }
 
   @override
-  Future<Response> getAttendance(String studentId) async{
-    return await _apiManager.getData("${EndPoints.getAttendance}/$studentId",
+  Future<Response> getAttendance(String courseId) async{
+    return await _apiManager.getData("${EndPoints.getAttendance}/$courseId",
     headers: {
-      'Authorization': "Bearer ${SharedPreferenceServices.getToken(AppConstants.token).toString()}",
+      'Authorization': "Bearer ${SharedPreferenceServices.getData(AppConstants.token).toString()}",
     });
 
   }

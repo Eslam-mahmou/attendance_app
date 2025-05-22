@@ -7,9 +7,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class LayoutViewModel extends Cubit<LayoutState>{
   LayoutViewModel() : super(InitialLayoutState());
-  int currentIndex = 2;
+  int currentIndex = 0;
   List<Widget> tabs=[
-    const ScanTebScreen(),
+    const ScanQrScreen(),
     const ProfileTabScreen(),
     const AttendanceTabScreen()
   ];
